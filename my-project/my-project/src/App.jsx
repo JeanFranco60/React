@@ -4,7 +4,7 @@ import Welcome from "./components/Welcome";
 import Title from "./components/Title";
 import Subtitle from "./components/Subtitle";
 import Description from "./components/Description";
-import Persona from "./components/Persona"
+import Persona from "./components/Persona";
 
 function App() {
   const [count, setCount] = useState(0);
