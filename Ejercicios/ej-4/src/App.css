@@ -1,6 +1,7 @@
-body{
-  background-color: gray;
+body {
+  background-color: white;
   color: white;
+ font-size:x-small;
 }
 
 .movieCardContainer {
@@ -19,18 +20,31 @@ body{
   margin: 12px;
 }
 
-.card{
-  background-color:white;
-  
+.card1,
+.card2,
+.card3 {
+  background-color: white;
+  border: solid grey 1px;
 }
 
-h2  {
+h2 {
   margin: 0;
+  padding: 6px;
   background-color: black;
 }
 
-p{
+p {
   margin: 0;
   padding: 10px;
-  background-color:red;
+  background-color: grey;
 }
+
+.card2 p {
+  background-color: green;
+}
+
+.card3 p {
+  background-color: rgb(159, 159, 48);
+}
+
+

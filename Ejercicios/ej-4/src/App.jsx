@@ -7,7 +7,7 @@ function App() {
     <div className="movieCardContainer">
       <h1>Listado de Películas</h1>
       <div className="movieCardWrapper">
-        <div className="card">
+        <div className="card1">
           <Movie
             name="Spider-man"
             year={2017}
@@ -15,7 +15,7 @@ function App() {
             score="bueno"
           />
         </div>
-        <div className="card">
+        <div className="card2">
           <Movie
             name="Batman"
             year={2005}
@@ -23,7 +23,7 @@ function App() {
             score="regular"
           />
         </div>
-        <div className="card">
+        <div className="card3">
           <Movie
             name="Batman & Robin"
             year={1997}
