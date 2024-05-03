@@ -8,12 +8,12 @@ body {
   text-align: center;
 }
 
-.movieCardWrapper {
+.movieCard {
   display: flex;
   justify-content: space-around;
 }
 
-.movieCardWrapper img {
+.movieCard img {
   width: 200px;
   height: 300px;
   object-fit: cover;

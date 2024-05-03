@@ -1,0 +1,40 @@
+body {
+  margin: 50px;
+
+}
+.pokemonCardContainer {
+  text-align: center;
+
+}
+h1 {
+  margin: 20px;
+}
+
+.pokemonCard {
+  display: flex;
+  flex-wrap:wrap;
+  background-color: rgba(128, 128, 128, 0.41);
+  gap: 30px;
+  border-radius: 8px;
+  justify-content: center;
+}
+
+h2 {
+  margin: 35px;
+  color: blue;
+}
+
+p {
+  margin: 0;
+  padding: 10px;
+  color: black;
+  font-size: large;
+}
+.x {
+  background-color: white;
+}
+
+.sizeCard {
+  width: 30vh;
+  height: 40vh;
+}
