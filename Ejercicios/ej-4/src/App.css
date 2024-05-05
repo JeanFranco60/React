@@ -1,7 +1,6 @@
 body {
   background-color: white;
-  color: white;
- font-size:x-small;
+  font-size: x-small;
 }
 
 .movieCardContainer {
@@ -23,7 +22,7 @@ body {
 .card1,
 .card2,
 .card3 {
-  background-color: white;
+  color: white;
   border: solid grey 1px;
 }
 
@@ -46,5 +45,3 @@ p {
 .card3 p {
   background-color: rgb(159, 159, 48);
 }
-
-

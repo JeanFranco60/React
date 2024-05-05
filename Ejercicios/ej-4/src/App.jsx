@@ -5,8 +5,8 @@ import Movie from "./components/Movie";
 function App() {
   return (
     <div className="movieCardContainer">
-      <h1>Listado de Películas</h1>
-      <div className="movieCardWrapper">
+      <h1>Listado de sPelículas</h1>
+      <div className="movieCard">
         <div className="card1">
           <Movie
             name="Spider-man"
