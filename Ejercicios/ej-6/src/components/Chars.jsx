@@ -6,8 +6,8 @@ const LooneyTunesChars = () => {
   const allLooneyTunes = looneyTunes.all();
   console.log(allLooneyTunes);
   return (
-    <div className="gap">  
-      <div className="d-flex flex-wrap justify-content-center">
+    <div className="gap">
+      <div className="container d-flex flex-wrap justify-content-center">
         {allLooneyTunes.map((looney) => (
           <LooneyCard key={looney.name} looney={looney} />
         ))}

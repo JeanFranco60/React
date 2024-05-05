@@ -7,12 +7,12 @@ const LooneyCard = ({ looney }) => {
   const enemiesLimited = enemies.slice(0, 4).join(", ");
 
   return (
-    <div className="bg-white col-3 m-5 rounded-2">
+    <div className=" hover bg-white col-3 m-5 rounded-2  " >
       <div className="m-3 d-fel text-center">
         <h2>{name} </h2>
         <p>({race})</p>
         <p> Birthday: {birthday}</p>
-        <img src={photo} alt={name} className="img-fluid" />
+        <img src={photo} alt={name} className="img-fluid " />
         <p>
           <strong>Friends:</strong> {friendsLimited}
         </p>
