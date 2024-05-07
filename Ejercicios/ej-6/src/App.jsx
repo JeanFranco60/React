@@ -7,11 +7,9 @@ function App() {
   return (
     <div className="bg-black">
       <h1
-        className="text-center 
-      text-white"
-      >
+        className="text-center text-white" >
         Chars Looney Tunes
-        <RandomLooney />
+        {/* <RandomLooney /> */}
       </h1>
       <LooneyTunesChars />
     </div>

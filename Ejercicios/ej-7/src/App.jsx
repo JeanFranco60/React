@@ -1,35 +1,50 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [firstNumber, setFirstNumber] = useState(null);
+  const [secondNumber, setSecondNumber] = useState(null);
+  const [result, setResult] = useState(null);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <form container>
+      <div class="mb-3 ">
+        <label for="exampleInputEmail1" class="form-label">
+          First Number
+        </label>
+        <input
+          type="number"
+          class="form-control"
+          value={firstNumber}
+          onChange={(event) => {
+            setFirstNumber(event.target.value);
+          }}
+        />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">
+          Second Number
+        </label>
+        <input
+          type="number"
+          class="form-control"
+          value={secondNumber}
+          onChange={(event) => {
+            setSecondNumber(event.target.value);
+          }}
+        />
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+
+      <button
+        type="button"
+        class="btn btn-primary"
+        onClick={() => setResult(firstNumber * secondNumber)}
+      >
+        Multiplicar
+      </button>
+
+      {result != null ? <p>el resultado es: {result}</p> : ""}
+    </form>
+  );
 }
 
-export default App
+export default App;

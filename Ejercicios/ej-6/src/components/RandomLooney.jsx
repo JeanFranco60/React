@@ -10,7 +10,6 @@ function RandomLooney() {
     const randomLooney = looneyTunes.random();
     setRandomLooneyTune(randomLooney);
 
-    chars.push(randomLooney);
   };
 
   return (
