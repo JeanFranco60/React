@@ -2,7 +2,7 @@ const groceries = [
     {
       id: 1,
       name: "Frutilla",
-      unitPrice: 50.3,
+      unitPrice: 50.0,
     },
     {
       id: 2,
@@ -17,7 +17,7 @@ const groceries = [
     {
       id: 4,
       name: "Banana",
-      unitPrice: 55.9,
+      unitPrice: 56.0,
     },
     {
       id: 5,
@@ -27,7 +27,7 @@ const groceries = [
     {
       id: 6,
       name: "Zanahoria",
-      unitPrice: 17.6,
+      unitPrice: 19.0,
     },
     {
       id: 7,
@@ -42,7 +42,7 @@ const groceries = [
     {
       id: 9,
       name: "Pan",
-      unitPrice: 22.5,
+      unitPrice: 22.0,
     },
     {
       id: 10,

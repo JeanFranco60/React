@@ -1,23 +1,48 @@
-import React from "react";
-import { useState } from "react";
-import "./App.css";
-import Groceries from "./components/Groceries";
+import React, { useState } from "react";
+import ProductList from "./components/ProductList";
+import Cart from "./components/Cart";
+import data from "./data/groceries";
+
 function App() {
-  const [products, setProducts] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
+
+  const addToCart = (product) => {
+    const existingItemIndex = cartItems.findIndex(
+      (item) => item.id === product.id
+    );
+
+    if (existingItemIndex !== -1) {
+      const updatedCartItems = [...cartItems];
+      updatedCartItems[existingItemIndex].quantity += 1;
+      setCartItems(updatedCartItems);
+    } else {
+      setCartItems([...cartItems, { ...product, quantity: 1 }]);
+    }
+  };
+
+  const removeFromCart = (productId) => {
+    const updatedCartItems = cartItems.filter((item) => item.id !== productId);
+    setCartItems(updatedCartItems);
+  };
 
   return (
-    <div className="container m-3">
-      <h1>Ejercicio 8</h1>
-      <h4 className="mt-3 mb-3">Productos disponibles</h4>
+    <div className="container">
       <div className="row">
+        <h1>Ejercicio 7</h1>
         <div className="col-6">
-          <Groceries
-            key={products.id}
-            products={products}
-            price={products.unitPrice}
-          />
+          <h4>Productos Disponibles</h4>
+          <ProductList products={data} addToCart={addToCart} />
         </div>
-        <div className="col-6"></div>
+        <div className="col-6">
+          <h4>Carrito de Compras</h4>
+          {cartItems.length > 0 ? (
+            <Cart cartItems={cartItems} removeFromCart={removeFromCart} />
+          ) : (
+            <p>
+              Por favor, seleccione uno o más productos para agregar al carrito
+            </p>
+          )}
+        </div>
       </div>
     </div>
   );
