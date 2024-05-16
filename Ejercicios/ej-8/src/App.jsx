@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
 import ProductList from "./components/ProductList";
 import Cart from "./components/Cart";
 import data from "./data/groceries";
@@ -49,3 +49,26 @@ function App() {
 }
 
 export default App;
+
+
+
+///////////////////////////////////////////////////////////////////////////
+// function Products({ cartProducts, setCartProducts }) {
+//   const addProduct = (product) => {
+//     if (!cartProducts.some((p) => p.id === product.id)) {
+//       // Esto es lo que pasa cuando el producto no se encuentra en la lista.
+//       setCartProducts([...cartProducts, { ...product, qty: 1 }]);
+//     } else {
+//       setCartProducts(
+//         cartProducts.map((p) => {
+//           if (p.id === product.id) {
+//             return { ...p, qty: p.qty + 1 };
+//           }
+// return p;
+//         })
+//       );
+//     }
+//   }}
+
+
+//   import {useSt}
