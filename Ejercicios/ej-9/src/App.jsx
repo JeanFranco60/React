@@ -1,13 +1,18 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import Movies from "./components/Movies";
+import Navbar from "./components/Navbar";
+import Rating from "./components/RatingStars";
 
 function App() {
   const [movies, setMovies] = useState([]);
+  const [rating, setRating] = useState(1);
+
   useEffect(() => {
+    const voteAverage = rating * 2 - 2;
     const getMovies = async () => {
       const response = await fetch(
-        "https://api.themoviedb.org/3/discover/movie?include_adult=false&page=1&sort_by=popularity.desc",
+        `https://api.themoviedb.org/3/discover/movie?include_adult=true&page=1&sort_by=popularity.desc&vote_average.gte=${voteAverage}`,
         {
           method: "GET",
           headers: {
@@ -22,15 +27,17 @@ function App() {
     };
 
     getMovies();
-  }, []);
-
+  }, [rating]);
   console.log(movies);
   return (
-    <div className="container">
-      <h1 className="text-">HackLife</h1>
-      <div className="row">
-        <Movies movies={movies} setMovies={setMovies} />
-      </div>
+    <div>
+      <nav>
+        <Navbar />
+      </nav>
+      <Rating setRating={setRating} />
+    
+          <Movies movies={movies} setMovies={setMovies} rating={rating} />
+     
     </div>
   );
 }
