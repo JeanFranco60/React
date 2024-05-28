@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css?family=Varela+Round");
+html {
+  box-sizing: border-box;
+}
 
 body {
   background-color: rgb(0, 0, 0);
@@ -59,7 +63,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  filter: blur(10px);
+  filter: blur(9px);
   background-size: cover;
   z-index: -1;
 }
@@ -67,4 +71,12 @@ body {
 .spinner-grow {
   margin: 20px auto;
   display: block;
+  object-fit:+:
 }
+
+
+/* css movie details */
+
+
+
+

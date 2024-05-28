@@ -15,7 +15,7 @@ function MovieDetails() {
             headers: {
               accept: "application/json",
               Authorization:
-                "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhOGEzZDhjOGZlMjRlNzlkMmJjN2IyZjYyMmRlMDU2MyIsInN1YiI6IjY2NDUzYmFhYTE3ZjJiYzVkNjJkNzc1YyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.C6hY6n2PKJhRMxLnv2n0Fp57fvRLTtX3bsEW_ipnANE"
+                "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhOGEzZDhjOGZlMjRlNzlkMmJjN2IyZjYyMmRlMDU2MyIsInN1YiI6IjY2NDUzYmFhYTE3ZjJiYzVkNjJkNzc1YyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.C6hY6n2PKJhRMxLnv2n0Fp57fvRLTtX3bsEW_ipnANE",
             },
           }
         );
@@ -30,29 +30,24 @@ function MovieDetails() {
   }, [id]);
 
   return (
-    <div className="card" style={{ width: "18rem" }}>
-      {movie?.poster_path ? (
-        <img
-          src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-          className="card-img-top"
-          alt={movie.title}
-        />
+    <div
+      className="movie-details"
+      style={{
+        backgroundImage: movie ? `url(https://image.tmdb.org/t/p/original${movie.poster_path})` : '',
+        backgroundPosition: "center",
+        minHeight: "100vh",
+        display: "flex",
+        alignItems: "center",
+      }}
+    >
+      {movie ? (
+        <div className="text-center text-white">
+          <h2 className="mb-4">{movie.title}</h2>
+          <p>{movie.overview}</p>
+        </div>
       ) : (
-        <p>No hay póster disponible</p>
+        <p className="text-white">Cargando...</p>
       )}
-      <div className="card-body">
-        {movie ? (
-          <>
-            <h5 className="card-title">{movie.title}</h5>
-            <p className="card-text">{movie.overview}</p>
-            <a href="#" className="btn btn-primary">
-              Go somewhere
-            </a>
-          </>
-        ) : (
-          <p>Cargando...</p>
-        )}
-      </div>
     </div>
   );
 }
