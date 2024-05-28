@@ -9,13 +9,13 @@ function MovieDetails() {
     const fetchMovieDetails = async () => {
       try {
         const response = await fetch(
-          `https://api.themoviedb.org/3/movie/${id}`, 
+          `https://api.themoviedb.org/3/movie/${id}`,
           {
             method: "GET",
             headers: {
               accept: "application/json",
               Authorization:
-                "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhOGEzZDhjOGZlMjRlNzlkMmJjN2IyZjYyMmRlMDU2MyIsInN1YiI6IjY2NDUzYmFhYTE3ZjJiYzVkNjJkNzc1YyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.C6hY6n2PKJhRMxLnv2n0Fp57fvRLTtX3bsEW_ipnANE",
+                "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhOGEzZDhjOGZlMjRlNzlkMmJjN2IyZjYyMmRlMDU2MyIsInN1YiI6IjY2NDUzYmFhYTE3ZjJiYzVkNjJkNzc1YyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.C6hY6n2PKJhRMxLnv2n0Fp57fvRLTtX3bsEW_ipnANE"
             },
           }
         );
@@ -30,15 +30,29 @@ function MovieDetails() {
   }, [id]);
 
   return (
-    <div className="container text-white">
-      {movie ? (
-        <div>
-          <h2>{movie.title}</h2>
-          <p>{movie.overview}</p>
-        </div>
+    <div className="card" style={{ width: "18rem" }}>
+      {movie?.poster_path ? (
+        <img
+          src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+          className="card-img-top"
+          alt={movie.title}
+        />
       ) : (
-        <p>Cargando...</p>
+        <p>No hay póster disponible</p>
       )}
+      <div className="card-body">
+        {movie ? (
+          <>
+            <h5 className="card-title">{movie.title}</h5>
+            <p className="card-text">{movie.overview}</p>
+            <a href="#" className="btn btn-primary">
+              Go somewhere
+            </a>
+          </>
+        ) : (
+          <p>Cargando...</p>
+        )}
+      </div>
     </div>
   );
 }

@@ -1,6 +1,8 @@
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+
+
 import Home from "./pages/Home";
 import MovieDetails from "./pages/MoviesDetails";
 import NotFound from "./pages/NotFound";
