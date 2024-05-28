@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Movies from "../components/Movies";
-
+import Footer from "../components/Footer"
 
 function Home() {
   const [movies, setMovies] = useState([]);
@@ -34,11 +34,10 @@ function Home() {
     };
 
     getMovies();
-  }, [ page]);
+  }, [page, rating]);
 
   return (
     <>
-   
       <Navbar />
       <Movies
         movies={movies}
@@ -46,8 +45,8 @@ function Home() {
         rating={rating}
         setRating={setRating}
         setPages={setPages}
-
       />
+      <Footer/>
     </>
   );
 }

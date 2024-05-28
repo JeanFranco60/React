@@ -16,6 +16,8 @@ function RatingStars({ setRating }) {
       halfIcon={<i className="fa fa-star-half-alt"></i>}
       fullIcon={<i className="fa fa-star"></i>}
       activeColor="#ffd700"
+      classNames="rating-stars"
+      aria-label="Rating"
     />
   );
 }
